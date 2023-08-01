@@ -61,7 +61,7 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas offcanvas-end mobile_nav_close text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
               
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -69,20 +69,20 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                  <a class="nav-link clos active" aria-current="page" href="#">HOME</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">ABOUT</a>
+                  <a class="nav-link clos" href="#">ABOUT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about_sec">SERVICE</a>
+                    <a class="nav-link clos" href="#about_sec">SERVICE</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#projects">PROJECTS</a>
+                    <a class="nav-link clos" href="#projects">PROJECTS</a>
                   </li>
                   
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     DROPDOWN
                   </a>
                   <ul class="dropdown-menu dropdown-menu-dark">
@@ -93,7 +93,7 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">CONTACT</a>
+                    <a class="nav-link clos" href="#contact">CONTACT</a>
                   </li>
               </ul>
              
@@ -1230,6 +1230,22 @@
             
           })
         }
+
+
+        var clos=document.getElementsByClassName("clos")
+// console.log(clos);
+for(i=0;i<clos.length;i++){
+    clos[i].addEventListener("click",function(){
+      var ji=document.querySelector(".fade") 
+      ji.classList.remove("show")
+      var jil= document.querySelector(".mobile_nav_close")
+      if(jil.classList.contains("show")){
+        jil.classList.remove("show")
+      }
+    })
+}
+
+
     </script>
   </body>
 </html>
